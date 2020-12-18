@@ -1,5 +1,9 @@
 {
   "name": "malbay-x",
+  "author": {
+    "name": "Chamod Shehanka Perera",
+    "email": "hcsperera@gmail.com"
+  },
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -20,7 +24,20 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint --ext .ts .",
+    "eslint": "eslint --fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "npm run eslint",
+      "prettier --write"
+    ]
   },
   "eslintConfig": {
     "extends": [
@@ -39,5 +56,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/react-router-dom": "^5.1.6",
+    "@typescript-eslint/eslint-plugin": "^4.10.0",
+    "@typescript-eslint/parser": "^4.10.0",
+    "eslint": "^7.15.0"
   }
 }
