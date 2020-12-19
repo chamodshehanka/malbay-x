@@ -7,7 +7,7 @@ interface Props {
   onUpdate(value: string): void;
 }
 
-export function TableSearchInput({ onUpdate }: Props): JSX.Element {
+export function TableSearchInput({ onUpdate }: Props) {
   const [searchInput, setSearchInput] = useState("");
   const searchText = useDebounce(searchInput, 200);
   useEffect(() => {
