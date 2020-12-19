@@ -1,0 +1,26 @@
+import { Input } from "@material-ui/core";
+import React, { useState, useEffect } from "react";
+import { useDebounce } from "../../../hooks/useDebounce";
+
+interface Props {
+  // eslint-disable-next-line no-unused-vars
+  onUpdate(value: string): void;
+}
+
+export function TableSearchInput({ onUpdate }: Props): JSX.Element {
+  const [searchInput, setSearchInput] = useState("");
+  const searchText = useDebounce(searchInput, 200);
+  useEffect(() => {
+    onUpdate(searchText.toLowerCase());
+  }, [onUpdate, searchText]);
+  return (
+    <Input
+      margin="none"
+      className="search-input"
+      disableUnderline
+      placeholder="Enter search keyword"
+      value={searchInput}
+      onChange={(e) => setSearchInput(e.target.value)}
+    />
+  );
+}
