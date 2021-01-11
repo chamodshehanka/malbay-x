@@ -6,11 +6,11 @@ function Landing(): JSX.Element {
     <>
       <div
         className="hero-wrap js-fullheight"
-        style={{ backgroundImage: "url(" + IMG + ")" }}
+        style={{ backgroundImage: "url(" + IMG + ")", height: "100vh" }}
       >
         <div className="overlay" />
         <div className="container">
-          <div className="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
+          <div className="row no-gutters slider-text align-items-center justify-content-center">
             <h3 className="v">Modist - Time to get dress</h3>
             <h3 className="vr">Since - 1985</h3>
             <div className="col-md-11 ftco-animate text-center">
