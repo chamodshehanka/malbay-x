@@ -6,7 +6,7 @@ import product5 from "../../assets/images/product-5.jpg";
 import product6 from "../../assets/images/product-6.jpg";
 import product7 from "../../assets/images/product-7.jpg";
 import product8 from "../../assets/images/product-8.jpg";
-import DressCard from "../../components/ShopPage/DressCard";
+import ProductCard from "../../components/ShopPage/ProductCard";
 
 // row has 8 cards
 // page has 2 rows
@@ -17,61 +17,61 @@ export default function DressCardSection() {
       <section className="ftco-section bg-light">
         <div className="container-fluid">
           <div className="row">
-            <DressCard
+            <ProductCard
               img={product1}
               status={"NEW 30%"}
               title={"Young Woman Wearing Dress"}
               link={"#"}
-              price={"$200"}
+              price={200}
             />
-            <DressCard
+            <ProductCard
               img={product2}
               status={"NEW 30%"}
               title={"Young Woman Wearing Dress"}
               link={"#"}
-              price={"$200"}
+              price={200}
             />
-            <DressCard
+            <ProductCard
               img={product3}
               status={"NEW 30%"}
               title={"Young Woman Wearing Dress"}
               link={"#"}
-              price={"$200"}
+              price={200}
             />
-            <DressCard
+            <ProductCard
               img={product4}
               status={"NEW 30%"}
               title={"Young Woman Wearing Dress"}
               link={"#"}
-              price={"$200"}
+              price={200}
             />
-            <DressCard
+            <ProductCard
               img={product5}
               status={"NEW 30%"}
               title={"Young Woman Wearing Dress"}
               link={"#"}
-              price={"$200"}
+              price={200}
             />
-            <DressCard
+            <ProductCard
               img={product6}
               status={"NEW 30%"}
               title={"Young Woman Wearing Dress"}
               link={"#"}
-              price={"$200"}
+              price={200}
             />
-            <DressCard
+            <ProductCard
               img={product7}
               status={"NEW 30%"}
               title={"Young Woman Wearing Dress"}
               link={"#"}
-              price={"$200"}
+              price={200}
             />
-            <DressCard
+            <ProductCard
               img={product8}
               status={"NEW 30%"}
               title={"Young Woman Wearing Dress"}
               link={"#"}
-              price={"$200"}
+              price={200}
             />
           </div>
         </div>
