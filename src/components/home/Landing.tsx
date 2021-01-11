@@ -1,6 +1,5 @@
 import React from "react";
 import IMG from "../../assets/images/bg_1.jpg";
-import "./Landing.scss";
 
 function Landing(): JSX.Element {
   return (
@@ -9,7 +8,7 @@ function Landing(): JSX.Element {
         className="hero-wrap js-fullheight"
         style={{ backgroundImage: "url(" + IMG + ")", height: "100vh" }}
       >
-        <div className="overlay"></div>
+        <div className="overlay" />
         <div className="container">
           <div className="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
             <h3 className="v">Modist - Time to get dress</h3>
@@ -23,7 +22,7 @@ function Landing(): JSX.Element {
             <div className="mouse">
               <a href="#" className="mouse-icon">
                 <div className="mouse-wheel">
-                  <span className="ion-ios-arrow-down"></span>
+                  <span className="ion-ios-arrow-down" />
                 </div>
               </a>
             </div>
