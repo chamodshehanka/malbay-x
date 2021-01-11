@@ -12,7 +12,7 @@ export default function Cover() {
             <h1 className="mb-0 bread">Collection</h1>
             <p className="breadcrumbs">
               <span className="mr-2">
-                <a href="index.html">Home</a>
+                <a href="/">Home</a>
               </span>
               <span>Product</span>
             </p>
