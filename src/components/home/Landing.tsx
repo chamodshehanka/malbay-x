@@ -13,7 +13,7 @@ function Landing(): JSX.Element {
           <div className="row no-gutters slider-text align-items-center justify-content-center">
             <h3 className="v">Modist - Time to get dress</h3>
             <h3 className="vr">Since - 1985</h3>
-            <div className="col-md-11 ftco-animate text-center">
+            <div className="text-center" style={{ marginTop: "14.5rem" }}>
               <h1>Le Stylist</h1>
               <h2>
                 <span>Wear Your Dress</span>
