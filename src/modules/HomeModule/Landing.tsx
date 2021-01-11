@@ -1,7 +1,6 @@
-import React from "react";
 import IMG from "../../assets/images/bg_1.jpg";
 
-function Landing(): JSX.Element {
+function Landing() {
   return (
     <>
       <div

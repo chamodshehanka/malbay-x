@@ -1,4 +1,3 @@
-import React from "react";
 import Footer from "../../components/common/Footer/Footer";
 import Navbar from "../../components/common/Navbar/Navbar";
 import InsightsSection from "../../modules/HomeModule/InsightsSection";
@@ -10,7 +9,7 @@ import ServiceSection from "../../modules/HomeModule/ServiceSection";
 import SummerSale from "../../modules/HomeModule/SummerSale";
 import TrendingSection from "../../modules/HomeModule/TrendingSection";
 
-function HomePage(): JSX.Element {
+function HomePage() {
   return (
     <>
       <Navbar />
