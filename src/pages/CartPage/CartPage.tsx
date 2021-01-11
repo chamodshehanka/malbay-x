@@ -1,6 +1,6 @@
 import CartBanner from "../../modules/CartModule/CartBanner";
-import CartTable from "./CartTable";
-import RelatedProducts from "./RelatedProducts";
+import CartTable from "../../modules/CartModule/CartTable";
+import RelatedProducts from "../../components/common/RelatedProduct/RelatedProducts";
 
 function CartPage() {
   return (

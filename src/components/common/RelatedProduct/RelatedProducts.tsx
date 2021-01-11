@@ -1,7 +1,7 @@
-import Product1 from "../../assets/images/product-1.jpg";
-import Product2 from "../../assets/images/product-2.jpg";
-import Product3 from "../../assets/images/product-3.jpg";
-import Product4 from "../../assets/images/product-4.jpg";
+import Product1 from "../../../assets/images/product-1.jpg";
+import Product2 from "../../../assets/images/product-2.jpg";
+import Product3 from "../../../assets/images/product-3.jpg";
+import Product4 from "../../../assets/images/product-4.jpg";
 
 function RelatedProducts() {
   const tempArray = [Product1, Product2, Product3, Product4];
