@@ -1,11 +1,12 @@
 import React from "react";
+import IMG from "../../assets/images/bg_1.jpg";
 
 function Landing(): JSX.Element {
   return (
     <>
       <div
         className="hero-wrap js-fullheight"
-        style={{ backgroundImage: require("../../assets/images/bg_1.jpg") }}
+        style={{ backgroundImage: "url(" + IMG + ")" }}
       >
         <div className="overlay" />
         <div className="container">
