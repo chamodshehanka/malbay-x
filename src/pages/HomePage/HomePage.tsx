@@ -1,14 +1,14 @@
 import React from "react";
 import Footer from "../../components/common/Footer/Footer";
 import Navbar from "../../components/common/Navbar/Navbar";
-import InsightsSection from "../../components/home/InsightsSection";
-import Landing from "../../components/home/Landing";
-import NewsLetter from "../../components/home/NewsLetter";
-import OnlineFashionShopSection from "../../components/home/OnlineFashionShopSection";
-import OurProducts from "../../components/home/OurProducts";
-import ServiceSection from "../../components/home/ServiceSection";
-import SummerSale from "../../components/home/SummerSale";
-import TrendingSection from "../../components/home/TrendingSection";
+import InsightsSection from "../../modules/HomeModule/InsightsSection";
+import Landing from "../../modules/HomeModule/Landing";
+import NewsLetter from "../../modules/HomeModule/NewsLetter";
+import OnlineFashionShopSection from "../../modules/HomeModule/OnlineFashionShopSection";
+import OurProducts from "../../modules/HomeModule/OurProducts";
+import ServiceSection from "../../modules/HomeModule/ServiceSection";
+import SummerSale from "../../modules/HomeModule/SummerSale";
+import TrendingSection from "../../modules/HomeModule/TrendingSection";
 
 function HomePage(): JSX.Element {
   return (

@@ -22,7 +22,7 @@ function Landing(): JSX.Element {
             <div className="mouse">
               <a href="#" className="mouse-icon">
                 <div className="mouse-wheel">
-                  <span className="ion-ios-arrow-down" />
+                  <img src="https://img.icons8.com/android/24/000000/expand-arrow.png" />
                 </div>
               </a>
             </div>
