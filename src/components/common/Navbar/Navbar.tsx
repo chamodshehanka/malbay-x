@@ -9,7 +9,7 @@ function Navbar() {
       >
         <div className="container">
           <a className="navbar-brand" href="#">
-            Modist
+            Malbay X
           </a>
           <button
             className="navbar-toggler"
@@ -20,12 +20,12 @@ function Navbar() {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span className="oi oi-menu"></span> Menu
+            <span className="oi oi-menu" /> Menu
           </button>
           <div className="collapse navbar-collapse" id="ftco-nav">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item active">
-                <a href="index.html" className="nav-link">
+                <a href="/" className="nav-link">
                   Home
                 </a>
               </li>
@@ -72,7 +72,8 @@ function Navbar() {
               </li>
               <li className="nav-item cta cta-colored">
                 <a href="#" className="nav-link">
-                  <span className="icon-shopping_cart"></span>[0]
+                  <span className="icon-shopping_cart" />
+                  [0]
                 </a>
               </li>
             </ul>
