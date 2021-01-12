@@ -7,11 +7,17 @@ import product6 from "../../assets/images/product-6.jpg";
 import product7 from "../../assets/images/product-7.jpg";
 import product8 from "../../assets/images/product-8.jpg";
 import ProductCard from "../../components/ShopPage/ProductCard";
+import { useGetProducts } from "../../queries/useGetProducts";
 
 // row has 8 cards
 // page has 2 rows
 
 export default function DressCardSection() {
+  const { data: productsList = [], status: productStatus } = useGetProducts();
+
+  // TODO: List from here
+  console.log(productsList, productStatus);
+
   return (
     <>
       <section className="ftco-section bg-light">
