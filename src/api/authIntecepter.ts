@@ -5,7 +5,7 @@ interface RequestConfig extends AxiosRequestConfig {
   metadata?: { skipHeaderAdd?: boolean; startTime?: number };
 }
 
-export function addAuthIntecepter(instance: AxiosInstance) {
+export function addAuthInterceptor(instance: AxiosInstance) {
   instance.interceptors.request.use(
     async function addHeaders(config: RequestConfig) {
       const { metadata } = config;
