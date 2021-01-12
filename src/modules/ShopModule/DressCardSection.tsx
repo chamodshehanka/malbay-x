@@ -30,10 +30,10 @@ export default function DressCardSection() {
             {isSuccess &&
               productsList.map((p) => (
                 <ProductCard
-                  key={p?._id}
+                  key={p?.ID}
                   img={product1}
                   status={"NEW 30%"}
-                  title={p.name}
+                  title={p.Name}
                   link={"#"}
                   price={200}
                 />
