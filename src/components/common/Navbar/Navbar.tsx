@@ -41,7 +41,7 @@ function Navbar() {
                   Shop
                 </a>
                 <div className="dropdown-menu" aria-labelledby="dropdown04">
-                  <a className="dropdown-item" href="#">
+                  <a className="dropdown-item" href="/shop">
                     Shop
                   </a>
                   <a className="dropdown-item" href="#">
