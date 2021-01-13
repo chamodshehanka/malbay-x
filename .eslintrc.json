@@ -29,10 +29,10 @@
         ]
       }
     ],
-    "no-unused-vars": "error",
+    "no-unused-vars": "warn",
     "no-unused-expressions": "error",
     "quotes": [
-      "error",
+      "warn",
       "double"
     ],
     "react/jsx-uses-vars": "error",

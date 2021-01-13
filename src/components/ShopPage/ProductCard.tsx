@@ -1,3 +1,18 @@
+import { Button, withStyles } from "@material-ui/core";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
+import { Rating } from "@material-ui/lab";
+
+const StyledRating = withStyles({
+  iconFilled: {
+    color: "#7272f5",
+  },
+  iconHover: {
+    color: "#5f27cd",
+  },
+})(Rating);
+
 interface DressCardProps {
   img: string;
   status: string;
@@ -13,8 +28,10 @@ export default function ProductCard({
   link,
   price,
 }: DressCardProps) {
+  const isLiked = false;
+
   return (
-    <div className="col-sm col-md-6 col-lg-3 ftco-animate">
+    <div className="col-sm col-md-6 col-lg-3">
       <div className="product">
         <a href="#" className="img-prod">
           <img className="img-fluid" src={img} alt="Colorlib Template" />
@@ -27,31 +44,37 @@ export default function ProductCard({
           <div className="d-flex">
             <div className="pricing">
               <p className="price">
-                <span>${price}</span>
+                <span>LKR {price}</span>
               </p>
             </div>
             <div className="rating">
               <p className="text-right">
-                <span className="ion-ios-star-outline" />
-                <span className="ion-ios-star-outline" />
-                <span className="ion-ios-star-outline" />
-                <span className="ion-ios-star-outline" />
-                <span className="ion-ios-star-outline" />
+                <StyledRating
+                  name="customized-color"
+                  defaultValue={2}
+                  getLabelText={(value) =>
+                    `${value} Heart${value !== 1 ? "s" : ""}`
+                  }
+                  precision={0.5}
+                  icon={<FavoriteIcon fontSize="inherit" />}
+                />
               </p>
             </div>
           </div>
           <hr />
           <p className="bottom-area d-flex">
-            <a href="#" className="add-to-cart">
-              <span>
-                Add to cart <i className="ion-ios-add ml-1" />
-              </span>
-            </a>
-            <a href="#" className="ml-auto">
-              <span>
-                <i className="ion-ios-heart-empty" />
-              </span>
-            </a>
+            <Button color={"primary"} size={"small"}>
+              Add to Cart
+              <ShoppingCartIcon color={"primary"} fontSize={"small"} />
+            </Button>
+
+            <Button className="ml-auto">
+              {isLiked ? (
+                <FavoriteIcon color={"primary"} fontSize={"small"} />
+              ) : (
+                <FavoriteBorderIcon color={"primary"} fontSize={"small"} />
+              )}
+            </Button>
           </p>
         </div>
       </div>
