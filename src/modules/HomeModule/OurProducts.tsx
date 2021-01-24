@@ -18,8 +18,8 @@ function OurProducts() {
         </div>
         <div className="container-fluid">
           <div className="row">
-            {tempArray.map((item) => (
-              <div className="col-sm col-md-6 col-lg ftco-animate">
+            {tempArray.map((item, i) => (
+              <div className="col-sm col-md-6 col-lg ftco-animate" key={i}>
                 <div className="product">
                   <a href="#" className="img-prod">
                     <img

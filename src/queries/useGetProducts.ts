@@ -10,5 +10,8 @@ export function useGetProducts() {
 const PRODUCT_ITEM = "PRODUCT_ITEM";
 
 export function useGetProductById(productId: string) {
-  return useQuery([PRODUCT_ITEM, productId], () => Product_API.getProductById);
+  const enabled = !!productId;
+  return useQuery([PRODUCT_ITEM, productId], () => Product_API.getProductById, {
+    enabled,
+  });
 }
