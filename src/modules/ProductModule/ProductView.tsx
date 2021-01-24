@@ -1,13 +1,20 @@
 import Product1 from "../../assets/images/product-1.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useGetProductById } from "../../queries/useGetProducts";
 
-function ProductView() {
+interface ProductViewProps {
+  productId: string;
+}
+
+function ProductView({ productId }: ProductViewProps) {
+  const { data: product } = useGetProductById(productId);
+
   return (
     <>
       <section className="ftco-section bg-light">
         <div className="container">
           <div className="row">
-            <div className="col-lg-6 mb-5 ftco-animate">
+            <div className="col-lg-6 mb-5 ftco-animate" key={productId}>
               <a href={Product1} className="image-popup">
                 <img
                   src={Product1}
