@@ -15,16 +15,9 @@ import Box from "@material-ui/core/Box";
 import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { User_API } from "../../api/user";
+import { signUpData } from "../../api/user/user.types";
 import { Snackbar } from "@material-ui/core";
 import { Alert } from "@material-ui/lab";
-
-type FormData = {
-  firstName: string;
-  lastName: string;
-  email: string;
-  password: string;
-  isEmpty: () => void;
-}
 
 function SignUpPage() {
   const history = useHistory();
@@ -42,10 +35,10 @@ function SignUpPage() {
     console.log("Err : ", errors);
   }
 
-  const onSubmitAction = (formData: FormData, e: any) => {
+  const onSubmitAction = (formData: signUpData, e: any) => {
     e.preventDefault();
 
-    console.log(formData.isEmpty());
+    //console.log(formData.isEmpty());
     User_API.signUpUser(formData)
       .then(() => {
         setOpenSuccessSnackbar(true);
@@ -80,9 +73,9 @@ function SignUpPage() {
                     margin="normal"
                     required
                     fullWidth
-                    label="First Name"
-                    name="firstName"
-                    autoComplete="firstName"
+                    label="Name"
+                    name="name"
+                    autoComplete="name"
                     autoFocus
                     size={"small"}
                     // ref={register({ required: true })}
@@ -95,9 +88,9 @@ function SignUpPage() {
                     margin="normal"
                     required
                     fullWidth
-                    label="Last Name"
-                    name="lastName"
-                    autoComplete="lastName"
+                    label="Address"
+                    name="address"
+                    autoComplete="address"
                     autoFocus
                     size={"small"}
                     // ref={register({ required: true })}

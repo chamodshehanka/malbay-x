@@ -6,12 +6,14 @@ const apiInstance = axios.create({
   baseURL: "INVALID_URL",
 });
 
+const URL = process.env.REACT_APP_BASEURL;
+
 addAuthInterceptor(apiInstance);
 addResponseInterceptor(apiInstance);
 
 apiInstance.interceptors.request.use(
   async function (config) {
-    config.baseURL = "http://localhost:4000/api/v1";
+    config.baseURL = URL || "http://localhost:4000/api/v1";
     return config;
   },
   function (error) {

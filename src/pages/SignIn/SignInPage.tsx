@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -12,6 +12,11 @@ import Grid from "@material-ui/core/Grid";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
+import { User_API } from "../../api/user";
+import { signInData } from "../../api/user/user.types";
+import { Snackbar } from "@material-ui/core";
+import { Alert } from "@material-ui/lab";
+import { useForm } from "react-hook-form";
 
 export function Copyright() {
   return (
@@ -28,7 +33,7 @@ export function Copyright() {
 
 export const useStylesSignIn = makeStyles((theme) => ({
   root: {
-    height: "100vh",
+    height: "100vh"
   },
   image: {
     backgroundImage: "url(https://source.unsplash.com/random)",
@@ -38,28 +43,53 @@ export const useStylesSignIn = makeStyles((theme) => ({
         ? theme.palette.grey[50]
         : theme.palette.grey[900],
     backgroundSize: "cover",
-    backgroundPosition: "center",
+    backgroundPosition: "center"
   },
   paper: {
     margin: theme.spacing(8, 4),
     display: "flex",
     flexDirection: "column",
-    alignItems: "center",
+    alignItems: "center"
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: theme.palette.primary.main,
+    backgroundColor: theme.palette.primary.main
   },
   form: {
     width: "100%", // Fix IE 11 issue.
-    marginTop: theme.spacing(1),
+    marginTop: theme.spacing(1)
   },
   submit: {
-    margin: theme.spacing(3, 0, 2),
-  },
+    margin: theme.spacing(3, 0, 2)
+  }
 }));
 
 function SignInPage() {
+  const [openSuccessSnackbar, setOpenSuccessSnackbar] = useState(false);
+  const [openFailedSnackbar, setOpenFailedSnackbar] = useState(false);
+
+  const {
+    // register,
+    handleSubmit, errors
+  } = useForm();
+
+  if (errors) {
+    console.log("Err : ", errors);
+  }
+
+  const onSubmitAction = (formData: signInData, e: any) => {
+    e.preventDefault();
+
+    //console.log(formData.isEmpty());
+    User_API.signInUser(formData)
+      .then(() => {
+        setOpenSuccessSnackbar(true);
+      })
+      .catch((e) => {
+        console.error(e);
+        setOpenFailedSnackbar(true);
+      });
+  };
   const classes = useStylesSignIn();
   return (
     <>
@@ -74,7 +104,7 @@ function SignInPage() {
             <Typography component="h1" variant="h5">
               Sign in
             </Typography>
-            <form className={classes.form} noValidate>
+            <form className={classes.form} onSubmit={handleSubmit(onSubmitAction)} noValidate>
               <TextField
                 variant="outlined"
                 margin="normal"
@@ -131,6 +161,26 @@ function SignInPage() {
           </div>
         </Grid>
       </Grid>
+
+      <Snackbar
+        open={openSuccessSnackbar}
+        autoHideDuration={2000}
+        onClose={() => setOpenSuccessSnackbar(false)}
+      >
+        <Alert onClose={() => setOpenSuccessSnackbar(false)} severity="success">
+          Successfully sing in
+        </Alert>
+      </Snackbar>
+
+      <Snackbar
+        open={openFailedSnackbar}
+        autoHideDuration={2000}
+        onClose={() => setOpenFailedSnackbar(false)}
+      >
+        <Alert onClose={() => setOpenFailedSnackbar(false)} severity="error">
+          Failed to sign in
+        </Alert>
+      </Snackbar>
     </>
   );
 }
