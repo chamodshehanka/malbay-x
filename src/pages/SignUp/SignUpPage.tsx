@@ -13,7 +13,7 @@ import Button from "@material-ui/core/Button";
 import Link from "@material-ui/core/Link";
 import Box from "@material-ui/core/Box";
 import { useHistory } from "react-router-dom";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import { User_API } from "../../api/user";
 import { signUpData } from "../../api/user/user.types";
 import { Snackbar } from "@material-ui/core";
@@ -26,12 +26,9 @@ function SignUpPage() {
   const [openSuccessSnackbar, setOpenSuccessSnackbar] = useState(false);
   const [openFailedSnackbar, setOpenFailedSnackbar] = useState(false);
 
-  const {
-    // register,
-    handleSubmit, errors
-  } = useForm();
+  const { handleSubmit, errors, control } = useForm();
 
-  if (errors) {
+  if (Object.keys(errors).length > 0) {
     console.log("Err : ", errors);
   }
 
@@ -68,7 +65,9 @@ function SignUpPage() {
             >
               <Grid container spacing={2}>
                 <Grid item xs={6}>
-                  <TextField
+                  <Controller
+                    as={<TextField />}
+                    control={control}
                     variant="outlined"
                     margin="normal"
                     required
@@ -83,7 +82,9 @@ function SignUpPage() {
                 </Grid>
 
                 <Grid item xs={6}>
-                  <TextField
+                  <Controller
+                    as={<TextField />}
+                    control={control}
                     variant="outlined"
                     margin="normal"
                     required
@@ -98,7 +99,9 @@ function SignUpPage() {
                 </Grid>
               </Grid>
 
-              <TextField
+              <Controller
+                as={<TextField />}
+                control={control}
                 variant="outlined"
                 margin="normal"
                 required
@@ -109,7 +112,9 @@ function SignUpPage() {
                 size={"small"}
                 // ref={register({ required: true })}
               />
-              <TextField
+              <Controller
+                as={<TextField />}
+                control={control}
                 variant="outlined"
                 margin="normal"
                 required

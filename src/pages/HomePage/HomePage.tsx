@@ -8,8 +8,17 @@ import OurProducts from "../../modules/HomeModule/OurProducts";
 import ServiceSection from "../../modules/HomeModule/ServiceSection";
 import SummerSale from "../../modules/HomeModule/SummerSale";
 import TrendingSection from "../../modules/HomeModule/TrendingSection";
+import { useEffect } from "react";
+import { User_API } from "../../api/user";
 
 function HomePage() {
+  useEffect(() => {
+    User_API.welcomeUser()
+      .then()
+      .catch((e) => {
+        console.error(e);
+      });
+  });
   return (
     <>
       <Navbar />
