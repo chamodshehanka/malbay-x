@@ -16,7 +16,7 @@ import { User_API } from "../../api/user";
 import { signInData } from "../../api/user/user.types";
 import { Snackbar } from "@material-ui/core";
 import { Alert } from "@material-ui/lab";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 
 export function Copyright() {
   return (
@@ -24,16 +24,15 @@ export function Copyright() {
       {"Copyright © "}
       <Link color="inherit" href="http://chamodshehanka.com/">
         chamodshehanka.com
-      </Link>{" "}
+      </Link>
       {new Date().getFullYear()}
-      {"."}
     </Typography>
   );
 }
 
 export const useStylesSignIn = makeStyles((theme) => ({
   root: {
-    height: "100vh"
+    height: "100vh",
   },
   image: {
     backgroundImage: "url(https://source.unsplash.com/random)",
@@ -43,37 +42,34 @@ export const useStylesSignIn = makeStyles((theme) => ({
         ? theme.palette.grey[50]
         : theme.palette.grey[900],
     backgroundSize: "cover",
-    backgroundPosition: "center"
+    backgroundPosition: "center",
   },
   paper: {
     margin: theme.spacing(8, 4),
     display: "flex",
     flexDirection: "column",
-    alignItems: "center"
+    alignItems: "center",
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: theme.palette.primary.main
+    backgroundColor: theme.palette.primary.main,
   },
   form: {
     width: "100%", // Fix IE 11 issue.
-    marginTop: theme.spacing(1)
+    marginTop: theme.spacing(1),
   },
   submit: {
-    margin: theme.spacing(3, 0, 2)
-  }
+    margin: theme.spacing(3, 0, 2),
+  },
 }));
 
 function SignInPage() {
   const [openSuccessSnackbar, setOpenSuccessSnackbar] = useState(false);
   const [openFailedSnackbar, setOpenFailedSnackbar] = useState(false);
 
-  const {
-    // register,
-    handleSubmit, errors
-  } = useForm();
+  const { handleSubmit, errors, control } = useForm();
 
-  if (errors) {
+  if (Object.keys(errors).length > 0) {
     console.log("Err : ", errors);
   }
 
@@ -104,8 +100,14 @@ function SignInPage() {
             <Typography component="h1" variant="h5">
               Sign in
             </Typography>
-            <form className={classes.form} onSubmit={handleSubmit(onSubmitAction)} noValidate>
-              <TextField
+            <form
+              className={classes.form}
+              onSubmit={handleSubmit(onSubmitAction)}
+              noValidate
+            >
+              <Controller
+                as={<TextField />}
+                control={control}
                 variant="outlined"
                 margin="normal"
                 required
@@ -117,7 +119,9 @@ function SignInPage() {
                 autoFocus
                 size={"small"}
               />
-              <TextField
+              <Controller
+                as={<TextField />}
+                control={control}
                 variant="outlined"
                 margin="normal"
                 required
