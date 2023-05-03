@@ -9,7 +9,7 @@ import SignUpPage from "../pages/SignUp/SignUpPage";
 export const routes = [
   { path: "/", component: HomePage },
   { path: "/shop", component: ShopPage },
-  { path: "/product", component: ProductPage },
+  { path: "/product/:productId", component: ProductPage },
   { path: "/cart", component: CartPage },
   { path: "/checkout", component: CheckoutPage },
   { path: "/signin", component: SignInPage },

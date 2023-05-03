@@ -29,8 +29,8 @@ export default function TrendingSection() {
           <div className="row">
             <div className="col-md-12">
               <div className="product-slider owl-carousel ftco-animate">
-                {tempArray.map((image) => (
-                  <div className="item">
+                {tempArray.map((image, i) => (
+                  <div className="item" key={i}>
                     <div className="product">
                       <a href="#" className="img-prod">
                         <img
